@@ -4,6 +4,7 @@
  */
 
 import { LogLevel } from '@azure/msal-browser';
+const redirectUri = import.meta.env.VITE_AUTH_REDIRECT_URL;
 
 /**
  * Configuration object to be passed to MSAL instance on creation.
@@ -16,7 +17,7 @@ export const msalConfig = {
     clientId: '438ac656-9c60-456c-b9fa-2262348aaab2',
     authority:
       'https://login.microsoftonline.com/33a0642d-5de4-4377-bb4d-ff3be14f1cde',
-    redirectUri: 'https://happy-sky-0a119b603.5.azurestaticapps.net/', //'http://localhost:5173/',
+    redirectUri,
     postLogoutRedirectUri: '/',
     navigateToLoginRequestUrl: false,
   },
