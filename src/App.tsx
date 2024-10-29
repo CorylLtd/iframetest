@@ -12,7 +12,7 @@ function App() {
 
   const handleRedirect = () => {
     instance
-      .loginPopup({
+      .loginRedirect({
         ...loginRequest,
         prompt: 'create',
       })
