@@ -31,6 +31,7 @@ function App() {
     console.log('Entity Name:', entityName);
   } else {
     console.log('Not in Dynamics');
+    console.dir(window);
   }
 
   useEffect(() => {
