@@ -15,22 +15,23 @@ declare global {
 
 function App() {
   const [isInIframe, setIsInIframe] = useState(false);
-const isInDynamics = typeof window.Xrm !== 'undefined';
+  const isInDynamics = typeof window.Xrm !== 'undefined';
 
-if (isInDynamics) {
-  console.log('In Dynamics');
-  
-  // For example, get the current form's context
-  const context = window.Xrm.Page;
+  if (isInDynamics) {
+    console.log('In Dynamics');
 
-  // Access form data
-  const entityId = context.data.entity.getId();
-  const entityName = context.data.entity.getEntityName();
+    // For example, get the current form's context
+    const context = window.Xrm.Page;
 
-  console.log('Entity ID:', entityId);
-  console.log('Entity Name:', entityName);
-} else {
-  console.log('Not in Dynamics');
+    // Access form data
+    const entityId = context.data.entity.getId();
+    const entityName = context.data.entity.getEntityName();
+
+    console.log('Entity ID:', entityId);
+    console.log('Entity Name:', entityName);
+  } else {
+    console.log('Not in Dynamics');
+  }
 
   useEffect(() => {
     setIsInIframe(window.self !== window.top);
